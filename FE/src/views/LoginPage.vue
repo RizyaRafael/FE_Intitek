@@ -1,4 +1,5 @@
 <script setup>
+import router from '@/router';
 import { reactive } from 'vue';
 
 const form = reactive({
@@ -17,7 +18,7 @@ const loginHandle = async () => {
         })
         const data = await response.json()
         localStorage.setItem('access_token', data.access_token)
-        console.log(data)
+        router.push('/')
     } catch (error) {
         console.log(error)
     }
